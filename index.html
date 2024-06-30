@@ -57,11 +57,11 @@
           }
 
           var buildUrl = "Build";
-          var loaderUrl = buildUrl + "/15.loader.js";
+          var loaderUrl = buildUrl + "/Blurbs.loader.js";
           var config = {
-              dataUrl: buildUrl + "/15.data.br",
-              frameworkUrl: buildUrl + "/15.framework.js.br",
-              codeUrl: buildUrl + "/15.wasm.br",
+              dataUrl: buildUrl + "/Blurbs.data.br",
+              frameworkUrl: buildUrl + "/Blurbs.framework.js.br",
+              codeUrl: buildUrl + "/Blurbs.wasm.br",
               streamingAssetsUrl: "StreamingAssets",
               companyName: "VelesGame",
               productName: "Blurbs",
@@ -107,6 +107,7 @@
               createUnityInstance(canvas, config, (progress) => {
                   progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
+                  unityI = unityInstance;
                   loadingBar.style.display = "none";
                   fullscreenButton.onclick = () => {
                       unityInstance.SetFullscreen(1);
@@ -164,5 +165,6 @@
 
 
       </script>
+
   </body>
 </html>
