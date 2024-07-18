@@ -162,6 +162,36 @@
               })
           }
 
+          function sendNotifications() {
+              vkBridge.send('VKWebAppAllowNotifications')
+                  .then((data) => {
+                      if (data.result) {
+                          // Разрешение на отправку уведомлений мини-приложением или игрой получено
+                      } else {
+                          // Ошибка
+                      }
+                  })
+                  .catch((error) => {
+                      // Ошибка
+                      console.log(error);
+                  });
+          }
+
+          function getShareEntry() {
+              vkBridge.send('VKWebAppShare', {
+                  link: 'https://vk.com/app51982394'
+              })
+                  .then((data) => {
+                      if (data.result) {
+                          // Запись размещена
+                      }
+                  })
+                  .catch((error) => {
+                      // Ошибка
+                      console.log(error);
+                  });
+          }
+
 
       </script>
   </body>
