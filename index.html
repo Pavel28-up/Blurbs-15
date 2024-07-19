@@ -192,6 +192,22 @@
                   });
           }
 
+          function getAccessRights() {
+              vkBridge..send('VKWebAppGetAuthToken', {
+                  app_id: 51982394,
+                  scope: 'friends, photos, video, stories, pages, status, notes, wall, docs, groups, stats, market'
+              })
+                  .then((data) => {
+                      if (data.access_token) {
+                          // Ключ доступа пользователя получен
+                      }
+                  })
+                  .catch((error) => {
+                      // Ошибка
+                      console.log(error);
+                  });
+          }
+
 
       </script>
   </body>
