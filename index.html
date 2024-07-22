@@ -164,17 +164,17 @@
 
           function sendNotifications() {
               vkBridge.send('VKWebAppAllowNotifications')
-              .then((data) => {
-                  if (data.result) {
+                  .then((data) => {
+                      if (data.result) {
                           // Разрешение на отправку уведомлений мини-приложением или игрой получено
-                  } else {
+                      } else {
                           // Ошибка
-                  }
-              })
-              .catch((error) => {
+                      }
+                  })
+                  .catch((error) => {
                       // Ошибка
                       console.log(error);
-              });
+                  });
           }
 
           function getShareEntry() {
