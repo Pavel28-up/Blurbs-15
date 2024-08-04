@@ -197,11 +197,12 @@
                   scope: 'friends, photos, video, stories, pages, status, notes, wall, docs, groups, stats, market'
               })
                   .then((data) => {
+                      unitiI.SendMessage('VKSDK', 'GetAccessRight', JSON.stringify(data.result));
                       if (data) {
                           // Проверка прав доступа
                       }
                       else {
-                          unitiI.SendMessage('VKSDK', 'GetAccessRight', JSON.stringify(data.result));
+                          
                       }
                   })
                   .catch((error) => {
